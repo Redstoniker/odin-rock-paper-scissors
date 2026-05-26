@@ -7,9 +7,15 @@ function getComputerChoise() {
     return computerChoise;
 }
 
-function getandtestHumanChoice() {
-    let humanChoice = prompt("Do you want to play \"Rock\", \"Paper\" or \"Scissors\"?").toLowerCase();
-    (humanChoice === "rock" || humanChoice ==="paper" || humanChoice==="scissors") ?  1+1 : humanChoice="no";  
+function getandtestHumanChoice(tryAgain = false) {
+    if (!tryAgain){
+    let humanChoice;
+    }
+    humanChoice = (tryAgain) ? 
+    prompt("It seems like you made a typo! Please try again with either \"Rock\", \"Paper\" or \"Scissors\"").toLowerCase.trim() :
+    prompt("Do you want to play \"Rock\", \"Paper\" or \"Scissors\"?").toLowerCase().trim();
+    
+    (humanChoice === "rock" || humanChoice ==="paper" || humanChoice==="scissors") ?  1+1 : getandtestHumanChoice(true);  
     return humanChoice;
 }
 
