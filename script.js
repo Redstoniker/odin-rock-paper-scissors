@@ -45,6 +45,8 @@ function playRound() {
 }
 
 function playGame(){
+    humanScore = 0;
+    computerScore = 0;
     let i = 0;
     while(i < 5){
         alert("The score is You "+humanScore+":"+computerScore+" Computer!");
@@ -54,3 +56,5 @@ function playGame(){
     (humanScore==computerScore) ? "You tricked us" :
     "You lost")
 }
+
+playGame();
